@@ -16,8 +16,22 @@ Install MySQL and make sure it is running. The database `hotel_booking_db` is cr
 CREATE DATABASE hotel_booking_db;
 ```
 
+
+## Database Configuration
+
+Before running the backend, configure your MySQL connection:
+
+1. Navigate to `backend/src/main/resources/`.
+2. Copy `application.properties.example`.
+3. Rename the copied file to `application.properties`.
+4. Update the MySQL username and password according to your local configuration.
+5. Save the file.
+
+**Note:** The actual `application.properties` file is excluded from GitHub to protect database credentials. Use the example file as a reference.
+
+
 ## 2. Run the backend (VS Code terminal)
-1. Open `backend/src/main/resources/application.properties` and set `spring.datasource.password`.
+1. Make sure you have configured `application.properties` using `application.properties.example`.
 2. Run:
 ```bash
 cd backend
@@ -63,12 +77,4 @@ Protected APIs need the header `Authorization: Bearer <token>` (the token comes 
 2. Copy the `token` from the response.
 3. GET `http://localhost:8080/api/admin/dashboard` -> Authorization tab -> Bearer Token -> paste it.
 
-## Push to GitHub
-```bash
-git init
-git add .
-git commit -m "Hotel and Travel Booking System"
-git branch -M main
-git remote add origin https://github.com/<your-username>/hotel-travel-booking.git
-git push -u origin main
-```
+
